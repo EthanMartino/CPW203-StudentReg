@@ -11,6 +11,7 @@ function main() {
 }
 function processForm() {
     let nextStu = getStudentFromForm();
+    displayStudent(nextStu);
 }
 function getStudentFromForm() {
     let tempStu = new Student();
@@ -24,4 +25,9 @@ function getStudentFromForm() {
 }
 function getInputValue(id) {
     return document.getElementById(id).value;
+}
+function displayStudent(s) {
+    let newItem = document.createElement("li");
+    newItem.innerText = s.firstName + " " + s.lastName;
+    document.querySelector("#student-list > ul").appendChild(newItem);
 }
