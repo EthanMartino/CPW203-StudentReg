@@ -32,6 +32,9 @@ stu.firstName = "Ethan"; // SET
 let fName:string = stu.firstName; //GET
 stu.address = "123 Fake Street";
 
+const birthdateAttr:string = "data-birthdate";
+const addressAttr:string = "data-address";
+const programAttr:string = "data-program";
 
 
 //Actual Code
@@ -65,12 +68,40 @@ function getInputValue(id:string):string{
     return (<HTMLInputElement>document.getElementById(id)).value;
 }
 
-function displayStudent(s:Student):void{
+function displayStudent(stu:Student):void{
     //Create new <li>
     let newItem:HTMLLIElement = document.createElement("li");
     //Get firstName and lastName properties from s Student object 
     //and put them into the newly created <li>
-    newItem.innerText = s.firstName + " " + s.lastName;
+    newItem.innerText = stu.firstName + " " + stu.lastName;
+    let displaySection = document.querySelector("#student-list");
+    let list = displaySection.querySelector("ul");
+
+    //Embed Student data in <li>
+    newItem.setAttribute(birthdateAttr, stu.dateOfBirth.toString());
+    newItem.setAttribute(addressAttr, stu.address);
+    newItem.setAttribute(programAttr, stu.program);
+
+    console.log(newItem);
+
+    newItem.onclick = showStudentData;
+
     //Put the new <li> in the <ul> in the student-list <div>
-    document.querySelector("#student-list > ul").appendChild(newItem);
+    list.appendChild(newItem);
+}
+
+/**
+ * Shows Certain student data when <li> is clicked
+ */
+function showStudentData():void{
+    //console.log(this);
+    let currListItem = <HTMLLIElement>this;
+    let name:string = currListItem.innerText;
+    let birthdate:string = currListItem.getAttribute(birthdateAttr);
+    let address:string = currListItem.getAttribute(addressAttr);
+    let program:string = currListItem.getAttribute(programAttr);
+
+    //Display Student under the list of students
+    document.querySelector("#display > h2").innerHTML = name;
+    document.querySelector("#display > p").innerHTML = name + " is studying " + program; 
 }
