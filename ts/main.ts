@@ -48,7 +48,26 @@ function main():void{
 function processForm():void{
     let nextStu:Student = getStudentFromForm();
     displayStudent(nextStu);
-    //clearForm();
+    clearForm();
+}
+
+function clearForm(){
+    /////Resets whole form\\\\\\
+    //let regForm:HTMLFormElement = document.querySelector("reg-form");
+    //regForm.reset();
+
+    let allTextBoxes:NodeListOf<HTMLInputElement> = document.querySelectorAll("form input[type=text]");
+
+    //////Traditional for loop\\\\\\\
+    // for (let i = 0; i < allTextBoxes.length; i++) {
+    //     let currBox:HTMLInputElement = allTextBoxes[i];
+    //     currBox.value = "";
+    // }
+
+    //////for-of loop\\\\\\
+    for (let currBox of allTextBoxes) {
+        currBox.value = "";
+    }
 }
 
 function getStudentFromForm():Student{

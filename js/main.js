@@ -15,6 +15,13 @@ function main() {
 function processForm() {
     let nextStu = getStudentFromForm();
     displayStudent(nextStu);
+    clearForm();
+}
+function clearForm() {
+    let allTextBoxes = document.querySelectorAll("form input[type=text]");
+    for (let currBox of allTextBoxes) {
+        currBox.value = "";
+    }
 }
 function getStudentFromForm() {
     let tempStu = new Student();
