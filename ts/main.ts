@@ -32,6 +32,7 @@ stu.firstName = "Ethan"; // SET
 let fName:string = stu.firstName; //GET
 stu.address = "123 Fake Street";
 
+//Constant (FINAL) variables
 const birthdateAttr:string = "data-birthdate";
 const addressAttr:string = "data-address";
 const programAttr:string = "data-program";

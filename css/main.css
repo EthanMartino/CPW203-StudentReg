@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+    background-color: darkgreen;
+    border-radius: 10px;
+    color: whitesmoke;
+    padding: .5em;
+}
+
+form > span{
+    color: red;
+}
+
+form{
+    text-align: center;
+}
