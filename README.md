@@ -6,4 +6,4 @@ This is an in class example that will demonstrate usage of objects and get some 
 Check out my [github profile](https://github.com/EthanMartino) for other projects.
 
 ## Live Website 
-[CLICK HERE](https://ethanmartino.github.io/CPW203-StudentReg/)
+[https://ethanmartino.github.io/CPW203-StudentReg/]
